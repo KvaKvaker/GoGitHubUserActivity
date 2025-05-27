@@ -1,5 +1,7 @@
 # GO CLI GitHub User Activity
 
+This utilite uses GitHub API to show user activity
+
 ## How to run
 
 Clone the repository in you folder and run the following command:
