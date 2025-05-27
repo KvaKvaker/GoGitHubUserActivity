@@ -37,12 +37,12 @@ func main() {
 	} else {
 		var ansObj []ObjectJson
 
-		resp, err := http.Get("https://api.github.com/users/KvaKvaker/events/public")
+		resp, err := http.Get("https://api.github.com/users/" + os.Args[1] + "/events/public")
 		if err != nil {
 			log.Println(err)
 			return
 		}
-		defer resp.Body.Close() // закрываем тело ответа после работы с ним
+		defer resp.Body.Close()
 
 		data, err := io.ReadAll(resp.Body)
 		if err != nil {
@@ -58,7 +58,6 @@ func main() {
 		}
 
 		for _, el := range ansObj {
-			//fmt.Printf("id - %v\t el - %v\n", idx, el)
 			if el.EventType == "CreateEvent" {
 				if el.Payload.RefType == "repository" {
 					fmt.Printf("Create repo '%v' in %v\n", el.Repo.RepoName, el.CreatedTime)
@@ -71,8 +70,5 @@ func main() {
 				fmt.Println("\nUnknown type event :(\n)")
 			}
 		}
-
-		//fmt.Printf("%s", ansObj) // печатаем ответ как строку
-
 	}
 }
