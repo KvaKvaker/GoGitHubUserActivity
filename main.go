@@ -70,9 +70,5 @@ func main() {
 				fmt.Println("\nUnknown type event :(\n)")
 			}
 		}
-<<<<<<< HEAD
-=======
-
->>>>>>> 4cd1c18a0eca97eb5cd8f67b0293f2a874f22490
 	}
 }
