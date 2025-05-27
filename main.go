@@ -66,6 +66,16 @@ func main() {
 				}
 			} else if el.EventType == "PushEvent" {
 				fmt.Printf("Push commit to repo '%v' in %v\n", el.Repo.RepoName, el.CreatedTime)
+			} else if el.EventType == "WatchEvent" {
+				fmt.Printf("Watch for repo '%v' in %v\n", el.Repo.RepoName, el.CreatedTime)
+			} else if el.EventType == "PullRequestEvent" {
+				fmt.Printf("Pull request in repo '%v' in %v\n", el.Repo.RepoName, el.CreatedTime)
+			} else if el.EventType == "PullRequestReviewEvent" {
+				fmt.Printf("Pull request review in repo '%v' in %v\n", el.Repo.RepoName, el.CreatedTime)
+			} else if el.EventType == "IssuesEvent" {
+				fmt.Printf("Opened a new issue in repo '%v' in %v\n", el.Repo.RepoName, el.CreatedTime)
+			} else if el.EventType == "IssueCommentEvent" {
+				fmt.Printf("Add comment to issue in repo '%v' in %v\n", el.Repo.RepoName, el.CreatedTime)
 			} else {
 				fmt.Println("\nUnknown type event :(\n)")
 			}
