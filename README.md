@@ -11,7 +11,7 @@ git clone https://github.com/KvaKvaker/GoGitHubUserActivity.git
 Run the following command to build and run the project:
 
 ```bash
-go build activity
+go build
 ./activity or ./activity.exe # 
 
 # To get user activity print
