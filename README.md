@@ -15,5 +15,5 @@ go build
 ./activity or ./activity.exe # 
 
 # To get user activity print
-./activity.exe <username>
+./GoGitHubUserActivity.exe <username>
 ```
